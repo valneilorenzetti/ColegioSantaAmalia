@@ -1,0 +1,190 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colégio Santa Amália</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/style.css?v=101" />
+    <link rel="shortcut icon" href="img/icone.png" />
+    <script type="text/javascript" src="http://colegiosantaamalia.com.br/saude/wp-content/themes/portal/js/jquery-1.11.0.min.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-60593883-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("html").removeClass("vm50_popup_fundo_fixa");
+            $("html").addClass("vm50_popup_fundo_fixa");
+        });
+        function vm50_fechar_popup() {
+            $("html").removeClass("vm50_popup_fundo_fixa");
+            $(".vm50_popup_fundo").hide();
+            $(".vm50_popup").hide();
+        }
+        function vm50_abre_msg() {
+            vm50_fechar_popup();
+            $('#unidades').hide();
+            $('.formulario_visita').show();
+        }
+        function enviar_msg() {
+            var nome_pai   = $('#nome_pai').val();
+            var email      = $('#email_visita').val();
+            var telefone   = $('#telefone_visita').val();
+            var nome_aluno = $('#nome_aluno').val();
+            var nascimento = $('#nascimento_visita').val();
+            var serie      = $('#serie_visita').val();
+            var ano        = $('#ano_visita').val();
+            var unidade    = $('#unidade_contato option:selected').val();
+            var conheceu   = $('#conheceu_contato option:selected').val();
+            var qual       = $('#qual_contato').val();
+            var receber    = $('#news_contato').val();
+            var erro       = '';
+            if (nome_pai=='')   erro += '- Nome do pai'+"\n";
+            if (email=='')      erro += '- E-mail'+"\n";
+            if (telefone=='')   erro += '- Telefone'+"\n";
+            if (nome_aluno=='') erro += '- Nome do Aluno'+"\n";
+            if (nascimento=='') erro += '- Data de Nascimento'+"\n";
+            if (serie=='')      erro += '- Série'+"\n";
+            if (ano=='')        erro += '- Ano'+"\n";
+            if (unidade=='')    erro += '- Unidade'+"\n";
+            if (erro!='') {
+                alert('Faltou preencher: '+"\n"+erro);
+            } else {
+                $.ajax({
+                    url  : 'http://colegiosantaamalia.com.br/mensagem.php',
+                    type : 'POST',
+                    data : {
+                        nome_pai   : nome_pai,
+                        email      : email,
+                        telefone   : telefone,
+                        nome_aluno : nome_aluno,
+                        nascimento : nascimento,
+                        serie      : serie,
+                        ano        : ano,
+                        unidade    : unidade,
+                        conheceu   : conheceu,
+                        qual       : qual,
+                        receber    : receber,
+                    },
+                }).done(function(resposta) {
+                    $('#unidades').show();
+                    $('#formulario_visita').hide();
+                    alert(resposta);
+                }).fail(function(jqXHR, textStatus ) {
+                    console.log("Request failed: " + textStatus);
+
+                }).always(function() {
+                    console.log("completou");
+                });
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div class="vm50_popup_fundo"></div>
+    <div class="vm50_popup"><img src="img/matriculas_aberta.jpg" onclick="vm50_abre_msg();"/>
+    <img src="http://colegiosantaamalia.com.br/saude/wp-content/themes/portal/images/bt_fechar.png"  class="vm50_popup_fechar" onclick="vm50_fechar_popup();"/></div>
+    <header>
+    <div class="row">
+        <div id="logo" class="large-4 large-offset-4 medium-4 medium-offset-4 small-10 small-offset-1 columns">
+        <h1>Colégio Santa Amália</h1>
+        </div>
+    </div>
+    </header>
+
+    <div id="unidades">
+    <section id="unidade-1" class="small-6 columns unidade">
+        <a href="/saude" class="button uppercase bolder">Unidade Saúde</a>
+    </section>
+    <section id="unidade-2" class="small-6 columns unidade">
+        <a href="/tatuape" class="button uppercase bolder">Unidade Tatuapé</a>
+    </section>
+    </div>
+    <div class="formulario_visita" style="display:none;">
+        <section class="contato">
+            <h2 class="large-offset-2">Agende sua visita</h2>
+            <input type="hidden" id="url_form" value="http://colegiosantaamalia.com.br/saude" />
+            <form action="http://colegiosantaamalia.com.br/saude/contato" method="post" id="form_contato" class="forms form-contato large-offset-2 large-8">
+                <table>
+                <tr><td>
+                    <label for="nome_contato">Nome do Responsável*</label>
+                    </td><td>
+                    <input type="text" id="nome_pai" name="nome_pai" required />
+                </td></tr>
+                <tr><td>
+                    <label for="email_contato">Email*</label>
+                    </td><td>
+                    <input type="email" id="email_visita" name="email_visita" required />
+                </td></tr>
+                <tr><td>
+                    <label for="telefone_contato">Telefone*</label>
+                    </td><td>
+                    <input type="text" id="telefone_visita" name="telefone_visita" required />
+                </td></tr>
+                <tr><td>
+                    <label for="nome_aluno">Nome do Aluno*</label>
+                    </td><td>
+                    <input type="text" id="nome_aluno" name="nome_aluno" required />
+                </td></tr>
+                <tr><td>
+                    <label for="nascimento_visita">Data Nascimento*</label>
+                    </td><td>
+                    <input type="date" id="nascimento_visita" name="nascimento_visita" required />
+                </td></tr>
+                <tr><td>
+                    <label for="serie_visita">Série atual*</label>
+                    </td><td>
+                    <input type="text" id="serie_visita" name="serie_visita" required />
+                </td></tr>
+                <tr><td>
+                    <label for="ano_visita">Ano que pretende matricular*</label>
+                    </td><td>
+                    <input type="text" id="ano_visita" name="ano_visita" required />
+                </td></tr>
+                <tr><td>
+                    <label for="conheceu_contato">Deseja visitar qual unidade?*</label>
+                    </td><td>
+                    <select id="unidade_contato" name="conheceu_contato" required >
+                        <option value="">Selecione</option>
+                        <option value="Tatuapé">Tatuapé</option>
+                        <option value="Saúde">Saúde</option>
+                    </select>
+                </td></tr>
+                <tr><td>
+                    <label for="conheceu_contato">Como conheceu o Colégio Santa Amália?</label>
+                    </td><td>
+                    <select id="conheceu_contato" name="conheceu_contato" >
+                        <option value="">Selecione</option>
+                        <option value="Guia das Escolas">Guia das Escolas</option>
+                        <option value="Guia da Boa Escola">Guia da Boa Escola</option>
+                        <option value="Revista">Revista</option>
+                        <option value="Passagem">Passagem</option>
+                        <option value="Indicação">Indicação</option>
+                        <option value="Site">Site</option>
+                        <option value="Google">Google</option>
+                        <option value="Clube">Clube</option>
+                        <option value="Mídia Metrô">Mídia Metrô</option>
+                        <option value="Folheto Promocional">Folheto Promocional</option>
+                        <option value="Jornal do Colégio">Jornal do Colégio</option>
+                    </select>
+                    <section class="qual_contato">
+                        <label for="qual_contato">Qual?</label>
+                        <input type="text" id="qual_contato" name="qual_contato" placeholder="" />
+                    </section>
+                </td></tr>
+                <tr><td colspan="2">
+                    <label for="news_contato" class="label-check"><input type="checkbox" id="news_contato" name="news_contato" value="0" /> Desejo receber newsletters com novidades do Colégio Santa Amália</label><br />
+                    <button tabindex="11" class="ladda-button" data-spinner-size="20" data-style="contract" ><span class="ladda-label">ENVIAR</span></button>
+                </td></tr>
+                </table>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+Link: https://portal.aws.amazon.com/gp/aws/manageYourAccount?nc2=h_m_ma
+
+Usuário: host.sites@ligasolidaria.org.br
+Senha: ligaf876@
+
+c3.large
+
+t1.micro
+
+subnet-689eaa2e
+vol-a77bd7ab
+snap-0dc97efc
+
+
+
+
+http://colegiosantaamalia.com.br/tatuape/wp-admin/
+
+
+http://colegiosantaamalia.com.br/saude/wp-admin/
+
+
+login: Carla
+senha: ligasolidaria1923
+senhas padrão: liga solidaria 1923
+
+
+Locaweb:
+Usuário: colegiosantaamalia
+Senha: rita@fabio@
+
+
+Registro.br:
+Usuário: LDP
+Senha: ligaf876@
+
+
+
+http://colegiosantaamalia.com.br
+http://colegiosantaamalia.tempsite.ws
+
+ftp.colegiosantaamalia.com.br
+colegiosantaamalia
+rita@fabio@
+
+
+define('DB_NAME', 'colegiosantaam5');
+
+/** Usuário do banco de dados MySQL */
+define('DB_USER', 'colegiosantaam5');
+
+/** Senha do banco de dados MySQL */
+define('DB_PASSWORD', 'cY6icFxUjF');
+
+/** nome do host do MySQL */
+define('DB_HOST', 'hm3040.locaweb.com.br');
+
+
+alunos
+blog
+blogtatuape
+controle
+crm
+indicadores
+olimpiadafund
+olimpiadatatu
+portal
+services
+
+
+
+57344
+
+
+webmail.colegiosantaamalia.com.br
+Login: contato@colegiosantaamalia.com.br
+Senha: Liga@1923
