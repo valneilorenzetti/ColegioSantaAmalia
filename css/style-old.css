@@ -1,0 +1,62 @@
+#logo{
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(0, 0, 0, 0.5);
+    box-shadow:         0px 0px 18px 0px rgba(0, 0, 0, 0.5);
+    padding: 30px 0;
+    z-index: 1;
+}
+
+#logo h1{
+    text-indent: -99999px;
+    background: url('../img/logo.jpg') no-repeat center center;
+    margin: 0;
+    height: 4rem;
+}
+
+#unidades{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.unidade{
+    height: 100%;
+    background-size: cover !important;
+    text-align: center;
+}
+
+#unidade-1{
+    background: url('../img/unidade-saude.jpg') no-repeat;
+    border-right: 1px solid #ffffff;
+}
+
+#unidade-2{
+    background: url('../img/unidade-tatuape2.jpg') no-repeat;
+    border-left: 1px solid #ffffff;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+.unidade .button{
+    font-size: 1.875rem;
+    top: 30%;
+}
+
+@media only screen and (max-device-width : 500px) {
+    .unidade .button{
+        position: absolute;
+        top: 30%;
+        left: 0;
+        right: 0;
+    }
+}

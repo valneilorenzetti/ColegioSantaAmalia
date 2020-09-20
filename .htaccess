@@ -1,0 +1,4 @@
+##### LOCAWEB - NAO REMOVER #####
+AddHandler php53-script .php
+suPHP_ConfigPath /home/colegiosantaamalia/
+##### LOCAWEB - NAO REMOVER #####

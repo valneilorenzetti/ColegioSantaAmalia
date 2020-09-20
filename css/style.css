@@ -1,0 +1,283 @@
+#logo{
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(0, 0, 0, 0.5);
+    box-shadow:         0px 0px 18px 0px rgba(0, 0, 0, 0.5);
+    padding: 30px 0;
+    z-index: 1;
+}
+/*
+
+#logo h1{
+    text-indent: -99999px;
+    background: url('../img/logo.jpg') no-repeat center center;
+    margin: 0;
+    height: 4rem;
+}
+.mobile {
+    display: none;
+}
+
+#unidades{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.unidade{
+    height: 100%;
+    background-size: cover !important;
+    text-align: left;
+}
+
+#unidade-1{
+    background-color: #bad0df;
+    background-image: url(../img/unidade-saude-bck.png);
+    border-right: 1px solid #ffffff;
+}
+
+#unidade-2{
+    background-color: #db957a;
+    background-image: url(../img/unidade-tatuape-bck.png);
+    border-left: 1px solid #ffffff;
+}
+#unidade-1 img,
+#unidade-2 img {
+    height: 100%;
+    max-width: 100%;
+}
+*/
+
+#logo h1{
+    text-indent: -99999px;
+    background: url('../img/logo.jpg') no-repeat center center;
+    margin: 0;
+    height: 4rem;
+}
+
+#unidades{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.unidade{
+    height: 100%;
+    background-size: cover !important;
+    text-align: center;
+}
+
+#unidade-1{
+    background: url('../img/unidade-saude.jpg') no-repeat;
+    border-right: 1px solid #ffffff;
+}
+
+#unidade-2{
+    background: url('../img/unidade-tatuape.jpg') no-repeat;
+    border-left: 1px solid #ffffff;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+.unidade .button{
+    font-size: 1.875rem;
+    top: 30%;
+}
+
+@media only screen and (max-device-width : 500px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+/*
+    .column, .columns {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .button {
+        top: 0;
+        left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #unidade-1 img,
+    #unidade-2 img {
+        margin-top: 10rem;
+        height: auto;
+        max-width: 100%;
+    }
+*/
+}
+/****** POP UP *****/
+.vm50_popup_fundo_fixa {
+    overflow: hidden;
+}
+.vm50_popup_fundo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 199998;
+}
+.vm50_popup {
+    display: block;
+    width: 80%;
+    height: auto;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    z-index: 199999;
+    cursor: pointer;
+}
+.vm50_popup_fechar {
+    display: block;
+    width: 50px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 199999;
+    cursor: pointer;
+}
+
+
+
+/**** FORMULARIO DE CONTATO *****/
+
+.contato{
+    background: #00446f;
+    padding: 30px 0px;
+}
+
+.contato h2{
+    color: #e7e7e7;
+    font-size: 36px;
+    font-weight: 400;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.contato h2 i{
+    color: #e7e7e7;
+}
+
+.forms{
+    display: table;
+}
+
+.forms table {
+    width: 100%;
+    max-width: 100%;
+}
+.forms input[type="text"],
+.forms input[type="email"],
+.forms select,
+.forms textarea {
+    width: 100%;
+    max-width: 100%;
+}
+.forms td:first-child {
+    width: 30%;
+}
+.forms td {
+    font-size: 20px;
+    padding-bottom: 1rem;
+}
+
+.forms label{
+    color: #e7e7e7;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.forms .label-check{
+/*    font-size: 14px;*/
+    float: left;
+    line-height: 20px;
+/*    width: 90%;*/
+}
+
+.forms .label-check input{
+    float: left;
+    height: 23px;
+    margin-right: 10px;
+}
+
+.forms input, .forms textarea, .forms select{
+    border: none;
+    border-radius: 5px;
+    height: 60px;
+    font-size: 18px;
+}
+
+.forms select{
+    padding: 18px 8px;
+}
+
+.forms textarea{
+    height: 140px;
+    padding-top: 20px;
+}
+
+button{
+    border: none !important;
+    background: #48d815 !important;
+    color: #000000 !important;
+    font-size: 30px !important;
+    border-radius: 0px !important;
+    width: 100% !important;
+}
+
+button:hover{
+    background: #2fa506 !important;
+}
+
+.form-contato label.error{
+    color: #FFFFFF;
+    font-size: 12px;
+    background: #800000;
+    margin-top: 5px;
+    padding: 3px;
+    border-radius: 2px;
+}
+
+.form-visita label.error{
+    color: #FFFFFF;
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+    padding: 3px;
+    border-radius: 2px;
+}
+
+small.aviso{
+    color: #FFFFFF !important;
+    font-size: 12px;
+    position: relative;
+    top: -12px;
+}
+
+.aviso-trabalhe, .aviso-trabalhe a{
+    color: #E7E7E7;
+    font-size: 11px;
+}
+
+.qual_contato{
+    display: none;
+}
